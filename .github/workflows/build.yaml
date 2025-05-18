@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  workflow_call:
+
+permissions:
+  contents: write
+
+jobs:
+  build-gba:
+    name: Build (Nintendo gba)
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitarm:latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    steps:
+    - uses: actions/checkout@v4

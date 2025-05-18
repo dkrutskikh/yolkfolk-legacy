@@ -41,5 +41,5 @@ jobs:
               }
           }
   build:
-    name: Make
+    name: Build
     uses: ./.github/workflows/build.yml
