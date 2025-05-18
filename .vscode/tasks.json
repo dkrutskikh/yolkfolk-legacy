@@ -4,18 +4,37 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Make",
+            "label": "Build debug",
+            "type": "process",
             "command": "make",
             "args": [
-                "-s"
+                "DEBUG=1"
             ],
-            "group": {
-                "kind": "build"
+            "problemMatcher": []
+        },
+        {
+            "label": "Build release",
+            "type": "process",
+            "command": "make",
+            "args": [
+                "DEBUG=0"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "make clean"
+        },
+        {
+            "label": "Stop Emulation",
+            "type": "shell",
+            "windows": {
+                "command": "taskkill /im mGBA.exe /F"
             },
-            "presentation": {
-                "reveal": "silent"
-            },
-            "problemMatcher": "$gcc"
+            "osx": {
+                "command": "killall mGBA"
+            }
         }
     ]
 }

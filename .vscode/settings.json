@@ -1,5 +1,33 @@
 {
+    "cSpell.language": "en",
     "cSpell.words": [
+        "devkit",
+        "DEVKITARM",
         "Yolkfolk"
-    ]
+    ],
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+        ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
+        "*.gba": "$(capture).elf",
+    },
+    "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.clang_format_sortIncludes": true,
+    "C_Cpp.clang_format_style": "Google",
+    "C_Cpp.formatting": "clangFormat",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "clang-format.fallbackStyle": "Google",
+    "editor.defaultFormatter": "ms-vscode.makefile-tools",
+    "editor.defaultFoldingRangeProvider": "ms-vscode.makefile-tools",
+    "[makefile]": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+    }
 }
