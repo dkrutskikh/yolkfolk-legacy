@@ -29,3 +29,15 @@ jobs:
         name: yolkfolk-legacy.gba
         path: yolkfolk-legacy.gba
         if-no-files-found: error
+    - uses: ncipollo/release-action@v1
+      if: ${{ github.event_name == 'push' }}
+      with:
+        artifacts: yolkfolk-legacy.gba
+        body: ${{ github.event.head_commit.message }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: Nintendo GBA build (latest commit)
+        tag: yolkfolk-legacy-gba_dev
+        allowUpdates: true
+        artifactErrorsFailBuild: true
+        prerelease: true
+        replacesArtifacts: true
