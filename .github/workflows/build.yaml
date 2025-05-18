@@ -17,3 +17,15 @@ jobs:
         shell: bash
     steps:
     - uses: actions/checkout@v4
+    - name: Build
+      run: |
+        export PATH=$DEVKITARM/bin:$DEVKITARM/tools/bin:$PATH
+        make -f Makefile
+      env:
+        DEVKITARM: /opt/devkitpro/devkitARM
+    - uses: actions/upload-artifact@v4
+      if: ${{ github.event_name == 'pull_request' }}
+      with:
+        name: yolkfolk-legacy.gba
+        path: yolkfolk-legacy.gba
+        if-no-files-found: error
